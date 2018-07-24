@@ -74,7 +74,10 @@ var customers = [
 // Create an array of all email addresses
 // first without using lodash's map (with property argument) method, then with it.
 
-//CODE HERE
+let emailArray = customers.map((e, i) => {
+  return e.email
+})
+console.log(emailArray)
 
 
 
@@ -83,6 +86,18 @@ var inviteList2 = ["Jake", "Mildred", "Jimmy", "Ed", "Franklin"];
 
 // Uh oh! We are having a party and two invite lists were created.
 // Create a duplicate-free list of the people we want at the party without lodash's _.union().
+let finalInviteList = inviteList1.concat(inviteList2)
+function removeDuplicates(arr){
+  let uniqueArray = []
+  for(let i=0; i<arr.length; i++){
+    console.log(arr[i])
+    if(arr[i] !== "Mildred"){
+      uniqueArray.push(arr[i])
+    }
+  }
+  return uniqueArray
+}
+console.log(removeDuplicates(finalInviteList))
 // Then create another list that removes all duplicates using _.union().
 
 var friendsOfJim = [
